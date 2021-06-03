@@ -1,0 +1,41 @@
+﻿/**
+ * Sequence Practice Problems
+
+//1. Generate random number
+let randomNumber = Math.floor(Math.random() * 10);
+console.log(randomNumber);
+
+//2. Rolling dice
+let diceRoll = Math.floor(1 + ((Math.random() * 10) % 6));
+console.log(diceRoll);
+
+//3. Adding two random dice numbers
+let diceRoll1 = Math.floor(1 + ((Math.random() * 10) % 6));
+let diceRoll2 = Math.floor(1 + ((Math.random() * 10) % 6));
+console.log(diceRoll1 + diceRoll2);
+
+//4. a program that reads 5 Random 2 Digit values, then finding their sum and the average
+let i = 1;
+let sum = 0;
+while (i <= 5) {
+  sum += Math.floor(10 + ((Math.random() * 10) % 90));
+  i++;
+}
+let avg = sum / (i - 1);
+
+console.log("sum = " + sum + " and average = " + avg);
+
+/**
+ * 5. Unit conversion
+ */
+//a. 1ft = 12 in then 42 in = ? ft
+let feet = 42 / 12;
+console.log("42 in = " + feet + " ft");
+
+//b. Rectangular Plot of 60 feet x 40 feet in meters
+let meter = 40 * 60 * 0.3048;
+console.log(meter);
+
+//c. Calculate area of 25 such plots in acres
+let area = 60 * 40 * 0.3048 * 25 * 0.00024711;
+console.log(area);

@@ -1,0 +1,60 @@
+﻿if & else
+
+// Write a program that takes day and month from the command line and prints true if day of month is between March 20 and June 20, false otherwise.
+
+let $Month=3;
+let $date=10;
+
+if (( ($Month <= 6 && $date <= 20) && (($Month >= 3 && $date <= 20) && ($date<31)) ))
+{
+        console.log ( "True");
+}
+else
+{
+        console.log("False");
+}
+
+//Write a program to simulate a coin flip and print out "Heads" or "Tails" accordingly.
+var head = 0;
+var tail = 1;
+
+var toss =Math.floor((Math.random() * 10) % 2);
+if(toss === 0){
+    console.log("0 Random Coin Value: Head")
+} else(toss === 1)
+{
+    console.log("1 Random Coin Value: Tails")
+}
+
+//Write a program that takes a year as input and outputs the Year is a Leap Year or not a Leap Year. A Leap Year checks for 4 Digit Number, Divisible by 4 and not 100 unless divisible by 400.
+function checkLeapYear(year) {
+
+    if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+        console.log(year + ' is a leap year');
+    } else {
+        console.log(year + ' is not a leap year');
+    }
+}
+
+const ps = require('promt-sync');
+const promt = ps();
+
+const year = prompt('Enter a year:');
+console.log(`leap year ${year}`);
+
+//Write a program that reads 5 Random 3 Digit values and then outputs the minimum and the maximum value
+let min = max;
+console.log(max);
+
+while(n <  4) {
+    randomNumber = Math.floor(100 + ((Math.random() * 10) % 900));
+    console.log(randomNumber);
+    if (max < randomNumber) {
+        max = randomNumber;
+    }
+    if (min > randomNumber) {
+        min = randomNumber;
+    }
+    n++;
+}
+console.log("Maximum is"+max+" "+"Minimum is"+min);

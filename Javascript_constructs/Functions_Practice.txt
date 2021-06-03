@@ -1,0 +1,92 @@
+﻿Functions Practice Problems
+
+//1.Write a function to check if the two numbers are Palindromes
+const prompt = require('prompt-sync')({sigint:true});
+let number = prompt("Enter a Number : ");
+
+number = Number(number);
+
+let temp = number;
+PalindromCheck(number);
+function PalindromCheck(number) {
+	let rem, final = 0;
+	while (number > 0) {
+		rem = number % 10;
+		number = parseInt(number / 10);
+		final = final * 10 + rem;
+	}
+	if(temp == final) {
+		console.log("Number is Palindrome");
+	} else {
+		console.log("Number is not a Palindrome");
+	}
+}
+
+//2.Take a number from user and check if the number is a Prime then show
+
+that its palindrome is also prime
+a. Write function check if number is Prime
+b. Write function to get the Palindrome.
+c. Check if the Palindrome number is also prime
+
+const prompt = require('prompt-sync')({sigint:true});
+let num = prompt("Enter a number: ");
+
+num = Number(num);
+
+if (PalindromeCheck(num)) {
+	if (PrimeCheck(num)) {
+		console.log("the Number is Palindrom and Prime")
+	} else
+		console.log("the Number is Palindrom but Not a Prime")
+} else {
+    console.log("the Number is not Palindrome")
+}
+// Function to check whether given number is prime or not
+function PrimeCheck(num) {
+	let isPrime = true;
+	let number = num;
+		for (let i = 2; i < number; i++) {
+			if (number % i == 0) {
+				isPrime = false;
+				break;
+			}
+		}
+	return isPrime;
+}
+// Function to check whether given number is palindrome or not
+function PalindromeCheck(num) {
+	let isPalindrome = true;
+	let number = num;
+	let rem, temp, final = 0;
+	temp = num;
+	while (number > 0) {
+		rem = number % 10;
+		final = final * 10 + rem;
+		number = parseInt(number / 10);
+	}
+	if (final != temp) {
+		isPalindrome = false;
+	}
+	return isPalindrome;
+}
+
+//3.Help user find degF or degC based on their Conversion Selection. Use
+Case Statement and ensure that the inputs are within the Freezing Point (
+0 °C / 32 °F ) and the Boiling Point of Water ( 100 °C / 212 °F )
+a. degF = (degC * 9/5) + 32
+b. degC = (degF – 32) * 5/9
+
+function validateTemparature(value, type) {
+    if (type == 'celsius' || type == 'c' || type == 'C') {
+        if (value >= 0 || value <= 100)
+            return true;
+    }
+    if (type == 'farenheit' || type == 'f' || type == 'F') {
+        value = (value - 32) * 5 / 9;
+        return validateTemparature(value, 'c');
+    }
+    return false;
+}
+console.log(validateTemparature(30, 'celsius'));
+console.log(validateTemparature(121, 'f'));

@@ -1,0 +1,93 @@
+﻿Selection problems with for loop
+
+//1. Write a program that takes a command-line argument n and prints a table of the
+powers of 2 that are less than or equal to 2^n.
+
+const readline1 = require("readline").createInterface({
+  input: process.stdin,
+});
+let powers = 1;
+readline1.question("Enter a number", (number7) => {
+  for (let i = 1; i <= number7; i++) {
+    powers = powers * 2;
+    console.log(powers);
+  }
+  readline1.close();
+});
+
+
+//2. Write a program that takes a command-line argument n and prints the nth harmonic
+number. Harmonic Number is of the form
+const readline2 = require("readline").createInterface({
+  input: process.stdin,
+});
+
+readline2.question("Enter a number", (number8) => {
+  let harmonic = "";
+  for (let i = 1; i <= 5; i++) {
+    console.log(harmonic + "1/" + i + " or " + 1 / i);
+  }
+});
+
+
+//3. Write a program that takes a input and determines if the number is a prime.
+
+const readline3 = require("readline").createInterface({
+  input: process.stdin,
+});
+
+readline3.question("Enter a number", (number9) => {
+  let isPrime = true;
+  for (let i = 2; i <= number9 / 2; i++) {
+    if (number9 % i == 0) {
+      isPrime = false;
+      break;
+    }
+  }
+  console.log(isPrime);
+  readline3.close();
+});
+
+
+//4. Extend the program to take a range of number as input and output the Prime
+Numbers in that range.
+
+const readline4 = require("readline").createInterface({
+  input: process.stdin,
+});
+
+readline4.question("Enter a minimum number", (number10) => {
+  readline4.question("Enter a maximum number", (number11) => {
+    for (let j = number10; j <= number11; j++) {
+      let isPrime = true;
+      for (let i = 2; i <= j / 2; i++) {
+        if (j % i == 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime == true) {
+        console.log(j);
+      }
+    }
+
+    readline4.close();
+  });
+});
+
+/*
+5. Write a program that computes a factorial of a number taken as input.
+5 Factorial – 5! = 1 * 2 * 3 * 4 * 5
+*/
+const readline5 = require("readline").createInterface({
+  input: process.stdin,
+});
+
+let factorial = 1;
+readline5.question("Enter a number", (number12) => {
+  for (let i = number12; i >= 1; i--) {
+    factorial = factorial * i;
+  }
+  console.log(factorial);
+  readline5.close();
+});

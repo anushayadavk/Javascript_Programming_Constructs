@@ -1,0 +1,95 @@
+﻿while loop
+
+//1.Write a program that takes a command-line argument n and prints a
+table of the powers of 2 that are less than or equal to 2^n till 256 is
+reached..
+const prompt = require("prompt-sync")();
+let number = prompt("enter a number to calculate table");
+let power = 1;
+let num = 1;
+
+     while(num <= number)
+    {
+        power = power * 2;
+        console.log(power);
+         if(power == 256) 
+        break;
+    }
+    num++;
+
+//2.Find the Magic Number
+
+a. Ask the user to think of a number n between 1 to 100
+b. Then check with the user if the number is less then n/2 or greater
+c. Repeat till the Magic Number is reached..
+const prompt = require("prompt-sync")();
+let number = prompt("enter a number between 1 to 100");
+let num = 50;
+while (number > 0) {
+    if (number >= num) {
+       console.log("number is greater"); 
+       for(let i = number; i <= number; i++ ) {
+           console.log("reached"+i);
+       }
+    }
+    else if (number <= num) {
+        console.log("number is smaller"); 
+         for(let i = number; i <= number; i++ ) {
+           console.log("reached"+i);
+       }
+    }
+    break;
+}
+
+
+//3.Extend the Flip Coin problem till either Heads or Tails wins 11 times.
+
+let num = 1;
+while(num <= 11)
+{
+    let flipCheck = Math.floor(Math.random()*2);
+    switch (flipCheck) {
+        case 0:
+        console.log("head wins");
+            break;
+        case 1:
+        console.log("tails wins");
+        default:
+            break;
+    }
+    num++;
+}
+
+
+//4.Write a Program where a gambler starts with Rs 100 and places Re 1 bet
+until he/she goes broke i.e. no more money to gamble or reaches the
+goal of Rs 200. Keeps track of number of times won and number of bets
+made.
+
+let money = 100;
+let betCount = 0;
+let winCount = 0;
+while(money <= 200 || money == 0)
+{
+    let checkWin = Math.floor(Math.random()*2);
+    if(checkWin == 1)
+    {
+        money++;
+        winCount++;
+    }
+    else
+    {
+        money--;
+    }
+    betCount++;
+}
+if(money == 200)
+{
+    console.log("gambler wins");
+}
+else
+{
+    console.log("gambler losses");
+}
+console.log("no of bets gambler played is "+betCount);
+console.log("no of bets gambler wins is "+winCount);

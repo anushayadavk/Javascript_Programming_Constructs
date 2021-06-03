@@ -1,0 +1,128 @@
+﻿Selection problems with case statement
+
+// 1. Read a single digit number and write the number in word using Case
+let number3 = Math.floor(Math.random() * 10);
+console.log("number entered: " + number3);
+switch (number) {
+  case 0:
+    console.log("zero");
+  case 1:
+    console.log("one");
+    break;
+  case 2:
+    console.log("two");
+    break;
+  case 3:
+    console.log("three");
+    break;
+  case 4:
+    console.log("four");
+    break;
+  case 5:
+    console.log("five");
+    break;
+  case 6:
+    console.log("six");
+    break;
+  case 7:
+    console.log("seven");
+    break;
+  case 8:
+    console.log("eight");
+    break;
+  case 9:
+    console.log("nine");
+    break;
+  default:
+    console.log("Not a number!");
+}
+
+//2. Read a Number and Display the week day (Sunday, Monday,…)*/
+let number4 = Math.floor(1 + ((Math.random() * 10) % 7));
+console.log("number entered: " + number4);
+switch (number4) {
+  case 1:
+    console.log("SUNDAY");
+    break;
+  case 2:
+    console.log("TUESDAY");
+    break;
+  case 3:
+    console.log("WEDNESDAY");
+    break;
+  case 4:
+    console.log("THURSDAY");
+    break;
+  case 5:
+    console.log("FRIDAY");
+    break;
+  case 6:
+    console.log("SATURDAY");
+    break;
+  case 7:
+    console.log("MONDAY");
+    break;
+  default:
+    console.log("Invalid!");
+}
+
+//3. Read a Number 1, 10, 100, 1000, etc and display unit, ten, hundred,…
+let number5 = 10; //100,100,1000
+switch (number5) {
+  case 1:
+    console.log("unit");
+    break;
+  case 10:
+    console.log("ten");
+    break;
+  case 100:
+    console.log("hundred");
+    break;
+  case 1000:
+    console.log("thausand");
+    break;
+  default:
+    console.log("Number entered is out of range!");
+}
+
+/*
+4. Write a program that takes User Inputs and does Unit Conversion of
+different Length units
+1. Feet to Inch 3. Inch to Feet
+2. Feet to Meter 4. Meter to Feet
+ */
+const readline = require("readline").createInterface({
+  input: process.stdin,
+});
+
+readline.question("Enter a number", (inputNumber) => {
+  number6 = inputNumber;
+});
+console.log("Enter a length to convert units: ");
+console.log("Select option to convert units:");
+console.log("1) Feet to Inch 2) Feet to Metre");
+console.log("3) Inch to Feet 4) Metre to Feet");
+
+readline.question("Choose the option", (option1) => {
+  switch (option1) {
+    case 1:
+      console.log(number6 * 12 + "inches");
+      break;
+    case 2:
+      console.log(number6 * 0.3048 + "meters");
+      break;
+
+    case 3:
+      console.log(number6 * 0.8333 + "feet");
+      break;
+
+    case 4:
+      console.log(number6 * 3.28 + "feet");
+      break;
+
+    default:
+      console.log("invalid option!");
+
+      readline.close();
+  }
+});
